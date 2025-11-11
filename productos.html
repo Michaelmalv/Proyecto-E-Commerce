@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Chocolates Indemini Baz</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- BARRA DE NAVEGACIÓN (igual que en index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #4e342e;">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span class="text-danger">❤️</span> Chocolates Indemini Baz
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            🏠 Inicio
+                        </a>
+                    </li>
+                    <!-- Página activa -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="productos.html">
+                            📦 Productos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">
+                            ✉️ Contacto
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="carrito.html">
+                            🛒 Carrito
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-badge">
+                                0
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ENCABEZADO DE PÁGINA -->
+    <section class="page-header py-5 text-center text-white" style="background-color: #4e342e;">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">
+                📦 Nuestros Productos
+            </h1>
+            <p class="lead">
+                Descubre nuestra exquisita selección de chocolates artesanales
+            </p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PRODUCTOS -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Este contenedor se llenará dinámicamente con jQuery -->
+            <!-- row-cols-1: 1 columna en móvil -->
+            <!-- row-cols-md-2: 2 columnas en tablets -->
+            <!-- row-cols-lg-3: 3 columnas en desktop -->
+            <!-- g-4: gap (espacio) de 1.5rem entre elementos -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="productos-container">
+                <!-- Los productos se cargarán aquí con jQuery desde js/products-data.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL PARA DETALLES DEL PRODUCTO -->
+    <!-- Modal es un componente de Bootstrap para ventanas emergentes -->
+    <!-- fade: efecto de transición suave -->
+    <!-- tabindex="-1": no se puede seleccionar con tabulador cuando está cerrado -->
+    <div class="modal fade" id="productoModal" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+        <!-- modal-dialog-centered: centra el modal verticalmente -->
+        <!-- modal-lg: modal grande -->
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <!-- ENCABEZADO DEL MODAL -->
+                <div class="modal-header" style="background-color: #4e342e; color: white;">
+                    <h5 class="modal-title fw-bold" id="productoModalLabel">
+                        <!-- El título se llenará con jQuery -->
+                    </h5>
+                    <!-- Botón para cerrar el modal -->
+                    <!-- data-bs-dismiss: atributo de Bootstrap para cerrar modales -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                
+                <!-- CUERPO DEL MODAL -->
+                <div class="modal-body">
+                    <div class="row">
+                        <!-- Columna de la imagen (lado izquierdo) -->
+                        <div class="col-md-6 mb-3">
+                            <img id="modal-imagen" src="" alt="" class="img-fluid rounded shadow">
+                        </div>
+                        
+                        <!-- Columna de detalles (lado derecho) -->
+                        <div class="col-md-6">
+                            <!-- Precio destacado -->
+                            <h3 class="text-danger fw-bold mb-3" id="modal-precio"></h3>
+                            
+                            <!-- Descripción completa -->
+                            <p class="text-muted" id="modal-descripcion"></p>
+                            
+                            <!-- Características del producto -->
+                            <div class="alert alert-light border-start border-danger border-4 mt-3">
+                                <h6 class="fw-bold mb-3">
+                                    <span class="text-danger">✓</span> Características:
+                                </h6>
+                                <ul id="modal-caracteristicas" class="list-unstyled mb-0">
+                                    <!-- Las características se llenarán con jQuery -->
+                                </ul>
+                            </div>
+                            
+                            <!-- Información de stock -->
+                            <div id="modal-stock-info" class="alert mb-3">
+                                <!-- Se llenará dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PIE DEL MODAL -->
+                <div class="modal-footer">
+                    <!-- Selector de cantidad -->
+                    <div class="input-group me-auto" style="max-width: 150px;">
+                        <button class="btn btn-outline-secondary" type="button" id="modal-btn-menos">
+                            ➖
+                        </button>
+                        <input type="number" class="form-control text-center" id="modal-cantidad" value="1" min="1" readonly>
+                        <button class="btn btn-outline-secondary" type="button" id="modal-btn-mas">
+                            ➕
+                        </button>
+                    </div>
+                    
+                    <!-- Botones de acción -->
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cerrar
+                    </button>
+                    <button type="button" class="btn btn-danger" id="modal-btn-agregar">
+                        🛒 Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST PARA NOTIFICACIONES -->
+    <!-- Toast: notificación pequeña que aparece temporalmente -->
+    <!-- position-fixed: posición fija en la pantalla -->
+    <!-- top-0 end-0: esquina superior derecha -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+        <div id="producto-toast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="toast-message">
+                    <!-- Mensaje dinámico -->
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="py-4 mt-5 text-white text-center" style="background-color: #3e2723;">
+        <div class="container">
+            <p class="mb-2">&copy; 2025 Chocolates Indemini Baz. Todos los derechos reservados.</p>
+            <p class="mb-3">
+                📍 Quito, Ecuador
+            </p>
+            <div class="social-icons">
+                <a href="#" class="text-white me-3 fs-4" title="Facebook">
+                    📘
+                </a>
+                <a href="#" class="text-white me-3 fs-4" title="Instagram">
+                    📷
+                </a>
+                <a href="#" class="text-white fs-4" title="WhatsApp">
+                    💬
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Archivo con datos de productos -->
+    <script src="js/products-data.js"></script>
+    <!-- Archivo con funciones del carrito -->
+    <script src="js/cart.js"></script>
+    <!-- Archivo principal -->
+    <script src="js/main.js"></script>
+    <!-- Archivo específico para la página de productos -->
+    <script src="js/productos.js"></script>
+</body>
+</html>
