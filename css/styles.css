@@ -1,0 +1,376 @@
+/* ===================================
+   ARCHIVO CSS PRINCIPAL
+   Chocolates Indemini Baz
+   ===================================
+   
+   Este archivo contiene todos los estilos personalizados
+   que complementan a Bootstrap. Bootstrap ya nos da muchos
+   estilos predeterminados, aquí añadimos los nuestros.
+*/
+
+/* ===== ESTILOS GENERALES ===== */
+
+/* Importar fuente Google Fonts - Georgia (serif) para un look elegante */
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
+/* Selector universal: aplica a todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+/* Estilos del body (cuerpo del documento) */
+body {
+    font-family: 'Georgia', serif; /* Fuente elegante para chocolatería */
+    color: #3e2723; /* Color café oscuro para el texto */
+    line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+    background-color: #fafafa; /* Fondo gris muy claro */
+}
+
+/* ===== SECCIÓN HERO (PORTADA) ===== */
+
+/* Clase para la sección principal de bienvenida */
+.hero-section {
+    /* min-height: 100vh = altura mínima de 100% del viewport (pantalla) */
+    min-height: 100vh;
+    
+    /* Imagen de fondo con gradiente oscuro encima */
+    /* linear-gradient: crea una capa semi-transparente sobre la imagen */
+    background: linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.7)),
+                url('https://images.unsplash.com/photo-1511381939415-e44015466834?w=1200') center/cover;
+    
+    /* Alternativa con imagen local (descomenta si tienes la imagen):
+    background: linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.7)),
+                url('../imagenes/portada.jpg') center/cover;
+    */
+    
+    background-attachment: fixed; /* Efecto parallax: imagen fija al hacer scroll */
+}
+
+/* ===== ANIMACIONES ===== */
+
+/* Animación de aparición gradual (fade in) */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Comienza invisible */
+        transform: translateY(20px); /* Comienza 20px más abajo */
+    }
+    to {
+        opacity: 1; /* Termina completamente visible */
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
+
+/* Clase para aplicar la animación */
+.animate-fade-in {
+    animation: fadeIn 1s ease-out; /* Duración de 1 segundo, suavizado al final */
+}
+
+/* ===== TARJETAS DE PRODUCTOS ===== */
+
+/* Tarjeta de producto con efecto hover (al pasar el mouse) */
+.producto-card {
+    transition: all 0.3s ease; /* Transición suave de 0.3 segundos */
+    cursor: pointer; /* Cambia el cursor a manita al pasar sobre la tarjeta */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Esquinas redondeadas */
+    overflow: hidden; /* Oculta contenido que se salga */
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta */
+.producto-card:hover {
+    transform: translateY(-10px); /* Sube 10px */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Imagen dentro de la tarjeta de producto */
+.producto-card img {
+    width: 100%; /* Ancho completo del contenedor */
+    height: 250px; /* Altura fija */
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
+    transition: transform 0.3s ease; /* Transición suave para el zoom */
+}
+
+/* Efecto zoom en la imagen al hacer hover */
+.producto-card:hover img {
+    transform: scale(1.1); /* Aumenta el tamaño al 110% */
+}
+
+/* ===== BADGES DE STOCK ===== */
+
+/* Insignia (badge) que indica disponibilidad del producto */
+.stock-badge {
+    position: absolute; /* Posición absoluta respecto al contenedor padre */
+    top: 10px; /* 10px desde arriba */
+    right: 10px; /* 10px desde la derecha */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    z-index: 10; /* Se muestra encima de otros elementos */
+}
+
+/* Badge verde para productos en stock */
+.badge-stock {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Badge naranja para productos casi agotados */
+.badge-low-stock {
+    background-color: #ff9800;
+    color: white;
+}
+
+/* Badge rojo para productos sin stock */
+.badge-no-stock {
+    background-color: #f44336;
+    color: white;
+}
+
+/* ===== BOTONES PERSONALIZADOS ===== */
+
+/* Estilo personalizado para botones de incrementar/decrementar cantidad */
+.btn-quantity {
+    width: 35px; /* Ancho fijo */
+    height: 35px; /* Alto fijo (botón cuadrado) */
+    padding: 0; /* Sin padding interno */
+    display: inline-flex; /* Flexbox para centrar el contenido */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    border-radius: 5px; /* Esquinas redondeadas */
+}
+
+/* ===== FOOTER (PIE DE PÁGINA) ===== */
+
+/* Enlaces de redes sociales en el footer */
+.social-icons a {
+    transition: all 0.3s ease; /* Transición suave */
+    display: inline-block; /* Para que funcione el transform */
+}
+
+/* Efecto hover en iconos sociales */
+.social-icons a:hover {
+    transform: scale(1.2); /* Aumenta tamaño al 120% */
+    opacity: 0.8; /* Ligeramente transparente */
+}
+
+/* ===== MENSAJES DE STOCK ===== */
+
+/* Contenedor de mensaje de disponibilidad */
+.stock-message {
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Mensaje cuando hay stock disponible */
+.stock-available {
+    background-color: #e8f5e9; /* Verde claro */
+    color: #2e7d32; /* Verde oscuro */
+    border: 2px solid #66bb6a; /* Borde verde */
+}
+
+/* Mensaje cuando el stock es bajo */
+.stock-low {
+    background-color: #fff3e0; /* Naranja claro */
+    color: #e65100; /* Naranja oscuro */
+    border: 2px solid #ff9800; /* Borde naranja */
+}
+
+/* Mensaje cuando no hay stock */
+.stock-none {
+    background-color: #ffebee; /* Rojo claro */
+    color: #c62828; /* Rojo oscuro */
+    border: 2px solid #ef5350; /* Borde rojo */
+}
+
+/* ===== TABLA DEL CARRITO ===== */
+
+/* Estilos para las filas de la tabla del carrito */
+.carrito-item-row {
+    border-bottom: 1px solid #e0e0e0; /* Línea separadora */
+    transition: background-color 0.2s ease; /* Transición suave del color de fondo */
+}
+
+/* Efecto hover en las filas de la tabla */
+.carrito-item-row:hover {
+    background-color: #f5f5f5; /* Fondo gris claro al pasar el mouse */
+}
+
+/* Imagen del producto en el carrito */
+.carrito-item-img {
+    width: 80px; /* Ancho fijo */
+    height: 80px; /* Alto fijo */
+    object-fit: cover; /* Recorta para llenar el espacio */
+    border-radius: 8px; /* Esquinas redondeadas */
+}
+
+/* ===== CARDS MÓVILES DEL CARRITO ===== */
+
+/* Tarjeta de producto en vista móvil del carrito */
+.carrito-item-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== TOAST DE NOTIFICACIONES ===== */
+
+/* Posicionamiento del toast (notificación emergente) */
+.toast-container {
+    position: fixed;
+    top: 80px; /* Debajo de la navbar */
+    right: 20px;
+    z-index: 1050; /* Por encima de otros elementos */
+}
+
+/* ===== MODAL PERSONALIZADO ===== */
+
+/* Efecto de entrada del modal */
+.modal.show .modal-dialog {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Animación de deslizamiento hacia abajo */
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ===== LOADING SPINNER ===== */
+
+/* Spinner de carga (puede usarse cuando se procesa una compra) */
+.loading-spinner {
+    border: 4px solid #f3f3f3; /* Borde gris claro */
+    border-top: 4px solid #d84315; /* Borde superior rojo */
+    border-radius: 50%; /* Círculo perfecto */
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite; /* Animación de rotación infinita */
+}
+
+/* Animación de rotación */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===== RESPONSIVE (PANTALLAS PEQUEÑAS) ===== */
+
+/* Media query: estilos que se aplican solo en pantallas menores a 768px (móviles) */
+@media (max-width: 768px) {
+    /* Título más pequeño en la portada para móviles */
+    .hero-section h1 {
+        font-size: 2.5rem !important; /* !important sobrescribe otros estilos */
+    }
+    
+    /* Texto más pequeño en móviles */
+    .hero-section .lead {
+        font-size: 1.2rem !important;
+    }
+    
+    /* Imagen del carrito más pequeña en móvil */
+    .carrito-item-img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* ===== UTILIDADES ADICIONALES ===== */
+
+/* Clase helper para centrar texto */
+.text-center-mobile {
+    text-align: center;
+}
+
+/* En tablets y desktop, alinear a la izquierda */
+@media (min-width: 768px) {
+    .text-center-mobile {
+        text-align: left;
+    }
+}
+
+/* Cursor pointer (manita) para elementos clickeables */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Ocultar visualmente pero mantener accesible para lectores de pantalla */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ===== EFECTOS DE HOVER PERSONALIZADOS ===== */
+
+/* Efecto en enlaces del navbar */
+.navbar-nav .nav-link {
+    position: relative; /* Necesario para el pseudo-elemento ::after */
+    transition: color 0.3s ease;
+}
+
+/* Línea animada bajo los enlaces del navbar */
+.navbar-nav .nav-link::after {
+    content: ''; /* Pseudo-elemento vacío */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #d84315; /* Color rojo */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+/* Al hacer hover, la línea se expande */
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+/* ===== SCROLLBAR PERSONALIZADA (Solo Chrome/Safari) ===== */
+
+/* Ancho de la barra de scroll */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Color de fondo de la barra de scroll */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Color del "thumb" (la parte que se arrastra) */
+::-webkit-scrollbar-thumb {
+    background: #4e342e;
+    border-radius: 6px;
+}
+
+/* Color del thumb al hacer hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #3e2723;
+}
+
+/* ===== FIN DEL ARCHIVO CSS ===== */

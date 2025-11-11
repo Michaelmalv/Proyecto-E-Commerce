@@ -4,287 +4,258 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Chocolates Indemini Baz</title>
-    
-    <!-- Bootstrap CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- BARRA DE NAVEGACIÓN -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #4e342e;">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <span class="text-danger">❤️</span> Chocolates Indemini Baz
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            🏠 Inicio
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="productos.html">
-                            📦 Productos
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contacto.html">
-                            ✉️ Contacto
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" href="carrito.html">
-                            🛒 Carrito
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-badge">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #4e342e;">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+            Chocolates Indemini Baz
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        Inicio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="productos.html">
+                        Productos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="contacto.html">
+                        Contacto
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="carrito.html">
+                        Carrito
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-badge">
                                 0
                             </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- ENCABEZADO DE PÁGINA -->
-    <section class="page-header py-5 text-center text-white" style="background-color: #4e342e;">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-3">
-                ✉️ Contáctanos
-            </h1>
-            <p class="lead">
-                ¿Tienes alguna pregunta? Estamos aquí para ayudarte
-            </p>
-        </div>
-    </section>
+<section class="page-header py-5 text-center text-white" style="background-color: #4e342e;">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">
+            Contáctanos
+        </h1>
+        <p class="lead">
+            ¿Tienes alguna pregunta? Estamos aquí para ayudarte
+        </p>
+    </div>
+</section>
 
-    <!-- SECCIÓN DE CONTACTO -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row g-4">
-                <!-- COLUMNA DEL FORMULARIO (lado izquierdo) -->
-                <!-- col-lg-8: ocupa 8 de 12 espacios en pantallas grandes -->
-                <div class="col-lg-8">
-                    <div class="card shadow border-0">
-                        <div class="card-body p-4">
-                            <h3 class="card-title mb-4 fw-bold" style="color: #4e342e;">
-                                Envíanos un mensaje
-                            </h3>
-                            
-                            <!-- FORMULARIO DE CONTACTO -->
-                            <!-- needs-validation: clase de Bootstrap para validación -->
-                            <!-- novalidate: desactiva la validación HTML5 predeterminada -->
-                            <form id="formulario-contacto" class="needs-validation" novalidate>
-                                
-                                <!-- CAMPO: Nombre Completo -->
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label fw-bold">
-                                        👤 Nombre completo:
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <!-- form-control: clase de Bootstrap para inputs -->
-                                    <input 
-                                        type="text" 
-                                        class="form-control" 
-                                        id="nombre" 
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card shadow border-0">
+                    <div class="card-body p-4">
+                        <h3 class="card-title mb-4 fw-bold" style="color: #4e342e;">
+                            Envíanos un mensaje
+                        </h3>
+
+                        <form id="formulario-contacto" class="needs-validation" novalidate>
+
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label fw-bold">
+                                    Nombre completo:
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input
+                                        type="text"
+                                        class="form-control"
+                                        id="nombre"
                                         name="nombre"
                                         placeholder="Ingresa tu nombre completo"
                                         required>
-                                    <!-- Mensaje de error (se muestra si el campo no es válido) -->
-                                    <div class="invalid-feedback">
-                                        Por favor, ingresa tu nombre completo.
-                                    </div>
+                                <div class="invalid-feedback">
+                                    Por favor, ingresa tu nombre completo.
                                 </div>
+                            </div>
 
-                                <!-- FILA CON DOS COLUMNAS (Email y Teléfono lado a lado) -->
-                                <div class="row">
-                                    <!-- CAMPO: Email -->
-                                    <div class="col-md-6 mb-3">
-                                        <label for="email" class="form-label fw-bold">
-                                            ✉️ Correo electrónico:
-                                            <span class="text-danger">*</span>
-                                        </label>
-                                        <input 
-                                            type="email" 
-                                            class="form-control" 
-                                            id="email" 
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label fw-bold">
+                                        Correo electrónico:
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <input
+                                            type="email"
+                                            class="form-control"
+                                            id="email"
                                             name="email"
                                             placeholder="tu@email.com"
                                             required>
-                                        <div class="invalid-feedback">
-                                            Por favor, ingresa un email válido.
-                                        </div>
+                                    <div class="invalid-feedback">
+                                        Por favor, ingresa un email válido.
                                     </div>
+                                </div>
 
-                                    <!-- CAMPO: Teléfono -->
-                                    <div class="col-md-6 mb-3">
-                                        <label for="telefono" class="form-label fw-bold">
-                                            📞 Teléfono:
-                                            <span class="text-danger">*</span>
-                                        </label>
-                                        <input 
-                                            type="tel" 
-                                            class="form-control" 
-                                            id="telefono" 
+                                <div class="col-md-6 mb-3">
+                                    <label for="telefono" class="form-label fw-bold">
+                                        Teléfono:
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <input
+                                            type="tel"
+                                            class="form-control"
+                                            id="telefono"
                                             name="telefono"
                                             placeholder="0999999999"
                                             pattern="[0-9]{10}"
                                             required>
-                                        <div class="invalid-feedback">
-                                            Por favor, ingresa un teléfono válido (10 dígitos).
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- CAMPO: Asunto -->
-                                <div class="mb-3">
-                                    <label for="asunto" class="form-label fw-bold">
-                                        🏷️ Asunto:
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <!-- select: menú desplegable -->
-                                    <select class="form-select" id="asunto" name="asunto" required>
-                                        <option value="" selected disabled>Selecciona un asunto</option>
-                                        <option value="consulta">Consulta General</option>
-                                        <option value="pedido">Realizar un Pedido</option>
-                                        <option value="reclamo">Reclamo</option>
-                                        <option value="sugerencia">Sugerencia</option>
-                                        <option value="otro">Otro</option>
-                                    </select>
                                     <div class="invalid-feedback">
-                                        Por favor, selecciona un asunto.
+                                        Por favor, ingresa un teléfono válido (10 dígitos).
                                     </div>
                                 </div>
+                            </div>
 
-                                <!-- CAMPO: Mensaje -->
-                                <div class="mb-3">
-                                    <label for="mensaje" class="form-label fw-bold">
-                                        💬 Mensaje:
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <!-- textarea: campo de texto de múltiples líneas -->
-                                    <textarea 
-                                        class="form-control" 
-                                        id="mensaje" 
+                            <div class="mb-3">
+                                <label for="asunto" class="form-label fw-bold">
+                                    Asunto:
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <select class="form-select" id="asunto" name="asunto" required>
+                                    <option value="" selected disabled>Selecciona un asunto</option>
+                                    <option value="consulta">Consulta General</option>
+                                    <option value="pedido">Realizar un Pedido</option>
+                                    <option value="reclamo">Reclamo</option>
+                                    <option value="sugerencia">Sugerencia</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Por favor, selecciona un asunto.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label fw-bold">
+                                    Mensaje:
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <textarea
+                                        class="form-control"
+                                        id="mensaje"
                                         name="mensaje"
                                         rows="5"
                                         placeholder="Escribe tu mensaje aquí..."
                                         required></textarea>
-                                    <div class="invalid-feedback">
-                                        Por favor, escribe un mensaje.
-                                    </div>
+                                <div class="invalid-feedback">
+                                    Por favor, escribe un mensaje.
                                 </div>
-
-                                <!-- Nota de campos requeridos -->
-                                <p class="text-muted small mb-4">
-                                    <span class="text-danger">*</span> Campos obligatorios
-                                </p>
-
-                                <!-- BOTONES DE ACCIÓN -->
-                                <div class="d-flex gap-2">
-                                    <!-- w-100: width 100% (ancho completo) -->
-                                    <button type="submit" class="btn btn-danger w-100">
-                                        📤 Enviar Mensaje
-                                    </button>
-                                    <!-- type="button": no envía el formulario -->
-                                    <button type="button" class="btn btn-outline-secondary" id="btn-limpiar">
-                                        ✖️ Limpiar
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- COLUMNA DE INFORMACIÓN (lado derecho) -->
-                <div class="col-lg-4">
-                    <!-- CARD DE INFORMACIÓN DE CONTACTO -->
-                    <div class="card shadow border-0 mb-4">
-                        <div class="card-body p-4">
-                            <h4 class="card-title fw-bold mb-4" style="color: #4e342e;">
-                                Información de Contacto
-                            </h4>
-                            
-                            <!-- Lista de información -->
-                            <ul class="list-unstyled">
-                                <li class="mb-3">
-                                    <span class="text-danger fs-5 me-2">📍</span>
-                                    <strong>Dirección:</strong><br>
-                                    <span class="text-muted ms-4">Quito, Pichincha, Ecuador</span>
-                                </li>
-                                <li class="mb-3">
-                                    <span class="text-danger fs-5 me-2">📞</span>
-                                    <strong>Teléfono:</strong><br>
-                                    <span class="text-muted ms-4">+593 99 999 9999</span>
-                                </li>
-                                <li class="mb-3">
-                                    <span class="text-danger fs-5 me-2">✉️</span>
-                                    <strong>Email:</strong><br>
-                                    <span class="text-muted ms-4">info@indeminibaz.com</span>
-                                </li>
-                                <li class="mb-3">
-                                    <span class="text-danger fs-5 me-2">🕐</span>
-                                    <strong>Horario:</strong><br>
-                                    <span class="text-muted ms-4">Lun - Vie: 9:00 - 18:00</span><br>
-                                    <span class="text-muted ms-4">Sáb: 9:00 - 14:00</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- CARD DE REDES SOCIALES -->
-                    <div class="card shadow border-0">
-                        <div class="card-body p-4 text-center">
-                            <h5 class="card-title fw-bold mb-3" style="color: #4e342e;">
-                                Síguenos en Redes Sociales
-                            </h5>
-                            <div class="d-flex justify-content-center gap-3">
-                                <a href="#" class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;" title="Facebook">
-                                    📘
-                                </a>
-                                <a href="#" class="btn btn-outline-danger rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;" title="Instagram">
-                                    📷
-                                </a>
-                                <a href="#" class="btn btn-outline-success rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;" title="WhatsApp">
-                                    💬
-                                </a>
                             </div>
+
+                            <p class="text-muted small mb-4">
+                                <span class="text-danger">*</span> Campos obligatorios
+                            </p>
+
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-danger w-100">
+                                    Enviar Mensaje
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary" id="btn-limpiar">
+                                    Limpiar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card shadow border-0 mb-4">
+                    <div class="card-body p-4">
+                        <h4 class="card-title fw-bold mb-4" style="color: #4e342e;">
+                            Información de Contacto
+                        </h4>
+
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <span class="text-danger fs-5 me-2"></span>
+                                <strong>Dirección:</strong><br>
+                                <span class="text-muted ms-4">Quito, Pichincha, Ecuador</span>
+                            </li>
+                            <li class="mb-3">
+                                <span class="text-danger fs-5 me-2"></span>
+                                <strong>Teléfono:</strong><br>
+                                <span class="text-muted ms-4">+593 99 999 9999</span>
+                            </li>
+                            <li class="mb-3">
+                                <span class="text-danger fs-5 me-2"></span>
+                                <strong>Email:</strong><br>
+                                <span class="text-muted ms-4">info@indeminibaz.com</span>
+                            </li>
+                            <li class="mb-3">
+                                <span class="text-danger fs-5 me-2"></span>
+                                <strong>Horario:</strong><br>
+                                <span class="text-muted ms-4">Lun - Vie: 9:00 - 18:00</span><br>
+                                <span class="text-muted ms-4">Sáb: 9:00 - 14:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow border-0">
+                    <div class="card-body p-4 text-center">
+                        <h5 class="card-title fw-bold mb-3" style="color: #4e342e;">
+                            Síguenos en Redes Sociales
+                        </h5>
+                        <div class="d-flex justify-content-center gap-3">
+                            <a href="#" class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;" title="Facebook">
+
+                            </a>
+                            <a href="#" class="btn btn-outline-danger rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;" title="Instagram">
+
+                            </a>
+                            <a href="#" class="btn btn-outline-success rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;" title="WhatsApp">
+
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="py-4 mt-5 text-white text-center" style="background-color: #3e2723;">
-        <div class="container">
-            <p class="mb-2">&copy; 2025 Chocolates Indemini Baz. Todos los derechos reservados.</p>
-            <p class="mb-3">
-                📍 Quito, Ecuador
-            </p>
-            <div class="social-icons">
-                <a href="#" class="text-white me-3 fs-4" title="Facebook">
-                    📘
-                </a>
-                <a href="#" class="text-white me-3 fs-4" title="Instagram">
-                    📷
-                </a>
-                <a href="#" class="text-white fs-4" title="WhatsApp">
-                    💬
-                </a>
-            </div>
+<footer class="py-4 mt-5 text-white text-center" style="background-color: #3e2723;">
+    <div class="container">
+        <p class="mb-2">&copy; 2025 Chocolates Indemini Baz. Todos los derechos reservados.</p>
+        <p class="mb-3">
+            Quito, Ecuador
+        </p>
+        <div class="social-icons">
+            <a href="#" class="text-white me-3 fs-4" title="Facebook">
+
+            </a>
+            <a href="#" class="text-white me-3 fs-4" title="Instagram">
+
+            </a>
+            <a href="#" class="text-white fs-4" title="WhatsApp">
+
+            </a>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <!-- SCRIPTS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/cart.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/contacto.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script src="js/contacto.js"></script>
 </body>
 </html>
