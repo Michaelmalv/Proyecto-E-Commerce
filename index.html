@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos básicos del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolates Indemini Baz - Inicio</title>
+    
+    <!-- Bootstrap CSS desde CDN (Content Delivery Network) -->
+    <!-- Bootstrap es un framework CSS que nos da estilos y componentes prediseñados -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Nuestro archivo CSS personalizado -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <!-- navbar: clase de Bootstrap para crear barras de navegación -->
+    <!-- navbar-expand-lg: la barra se expande en pantallas grandes y se colapsa en móviles -->
+    <!-- navbar-dark: texto blanco para fondos oscuros -->
+    <!-- sticky-top: hace que la barra se quede fija al hacer scroll -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #4e342e;">
+        <div class="container">
+            <!-- Marca/Logo de la empresa -->
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span class="text-danger">❤️</span> Chocolates Indemini Baz
+            </a>
+            
+            <!-- Botón hamburguesa para móviles -->
+            <!-- data-bs-toggle y data-bs-target son atributos de Bootstrap para controlar el menú -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Menú de navegación colapsable -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- ms-auto: margin-start auto (empuja el menú a la derecha) -->
+                <ul class="navbar-nav ms-auto">
+                    <!-- active: indica la página actual -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            🏠 Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">
+                            📦 Productos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">
+                            ✉️ Contacto
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="carrito.html">
+                            🛒 Carrito
+                            <!-- Badge para mostrar cantidad de productos en el carrito -->
+                            <!-- position-absolute: posición absoluta respecto al contenedor padre -->
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-badge">
+                                0
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN HERO/PORTADA -->
+    <!-- Hero es el término para la sección principal de bienvenida -->
+    <section class="hero-section text-white text-center d-flex align-items-center">
+        <!-- container: contenedor de Bootstrap con márgenes automáticos y ancho responsive -->
+        <div class="container">
+            <!-- py-5: padding vertical de 3rem (espaciado arriba y abajo) -->
+            <div class="py-5">
+                <!-- display-1: clase de Bootstrap para títulos muy grandes -->
+                <h1 class="display-1 fw-bold mb-4 animate-fade-in">
+                    Chocolates Indemini Baz
+                </h1>
+                <!-- lead: clase para texto destacado más grande que el normal -->
+                <p class="lead fs-3 mb-4 animate-fade-in">
+                    La exquisitez del chocolate artesanal ecuatoriano
+                </p>
+                <p class="fs-5 mb-5 animate-fade-in">
+                    Elaborados con cacao fino de aroma, siguiendo tradiciones ancestrales
+                </p>
+                <!-- btn btn-danger: botón rojo de Bootstrap -->
+                <!-- btn-lg: botón grande -->
+                <!-- px-5: padding horizontal grande -->
+                <a href="productos.html" class="btn btn-danger btn-lg px-5 py-3 animate-fade-in">
+                    📦 Ver Nuestros Productos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CARACTERÍSTICAS -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold" style="color: #4e342e;">
+                ¿Por qué elegirnos?
+            </h2>
+            
+            <!-- row: sistema de filas de Bootstrap -->
+            <!-- g-4: gap (espacio) entre columnas -->
+            <div class="row g-4">
+                <!-- col-md-4: columna que ocupa 4 de 12 espacios en pantallas medianas -->
+                <!-- En móvil ocupará 12/12 (ancho completo) automáticamente -->
+                <div class="col-md-4">
+                    <!-- card: componente de tarjeta de Bootstrap -->
+                    <!-- h-100: height 100% para que todas las cards tengan la misma altura -->
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <!-- fs-1: font-size nivel 1 (muy grande) -->
+                            <div class="text-danger fs-1 mb-3">🏆</div>
+                            <h5 class="card-title fw-bold">Calidad Premium</h5>
+                            <p class="card-text text-muted">
+                                Utilizamos solo cacao ecuatoriano de primera calidad, 
+                                reconocido mundialmente por su aroma y sabor único.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="text-danger fs-1 mb-3">👍</div>
+                            <h5 class="card-title fw-bold">100% Artesanal</h5>
+                            <p class="card-text text-muted">
+                                Cada chocolate es elaborado a mano con dedicación y cariño,
+                                siguiendo recetas tradicionales perfeccionadas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="text-danger fs-1 mb-3">❤️</div>
+                            <h5 class="card-title fw-bold">Hecho con Amor</h5>
+                            <p class="card-text text-muted">
+                                Ponemos pasión en cada detalle, desde la selección del cacao
+                                hasta el empaque final de cada producto.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN LLAMADO A LA ACCIÓN (Call to Action) -->
+    <section class="py-5" style="background-color: #4e342e;">
+        <div class="container text-center text-white">
+            <h2 class="mb-4">¿Listo para disfrutar el mejor chocolate?</h2>
+            <p class="lead mb-4">
+                Explora nuestra selección de productos artesanales
+            </p>
+            <!-- btn-outline-light: botón con borde blanco y fondo transparente -->
+            <a href="productos.html" class="btn btn-outline-light btn-lg me-3">
+                Ver Productos
+            </a>
+            <a href="contacto.html" class="btn btn-danger btn-lg">
+                Contáctanos
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4 text-white text-center" style="background-color: #3e2723;">
+        <div class="container">
+            <p class="mb-2">&copy; 2025 Chocolates Indemini Baz. Todos los derechos reservados.</p>
+            <p class="mb-3">
+                📍 Quito, Ecuador
+            </p>
+            <!-- Iconos de redes sociales -->
+            <div class="social-icons">
+                <a href="#" class="text-white me-3 fs-4" title="Facebook">
+                    📘
+                </a>
+                <a href="#" class="text-white me-3 fs-4" title="Instagram">
+                    📷
+                </a>
+                <a href="#" class="text-white fs-4" title="WhatsApp">
+                    💬
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS AL FINAL DEL BODY -->
+    <!-- Los scripts van al final para que la página cargue más rápido -->
+    
+    <!-- jQuery desde CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Bootstrap Bundle JS (incluye Popper para tooltips y dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Nuestro archivo JavaScript personalizado -->
+    <script src="js/main.js"></script>
+</body>
+</html>
